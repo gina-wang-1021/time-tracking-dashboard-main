@@ -1,0 +1,29 @@
+ *, *::before, *::after {
+    box-sizing: border-box;
+ }
+
+ @font-face {
+   font-family: 'Rubik-Light';
+   src: url('./Rubik/static/Rubik-Light.ttf');
+ }
+
+ @font-face {
+   font-family: 'Rubik-Regular';
+   src: url('./Rubik/static/Rubik-Regular.ttf');
+ }
+
+ @font-face {
+   font-family: 'Rubik-Medium';
+   src: url('./Rubik/static/Rubik-Medium.ttf');
+ }
+
+ body{
+    height: 100vh;
+    width: 100vw;
+    background-color: hsl(226, 43%, 10%);
+ }
+
+ main {
+    height: 100%;
+    width: 100%;
+ }
