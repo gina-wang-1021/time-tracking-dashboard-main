@@ -21,6 +21,8 @@
     height: 100vh;
     width: 100vw;
     background-color: hsl(226, 43%, 10%);
+    color: #FFF;
+    font-family: 'Rubik-Light';
  }
 
  main {
