@@ -7,6 +7,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="./base.css">
   <link rel="stylesheet" href="./style.css">
+  <script defer src="./index.js"></script>
   
   <title>Frontend Mentor | Time tracking dashboard</title>
 
@@ -26,9 +27,9 @@
           </div>
         </div>
         <div class="nav-btns">
-          <button class="btn">Daily</button>
-          <button class="btn">Weekly</button>
-          <button class="btn">Monthly</button>
+          <button class="btn" id="dailyBtn">Daily</button>
+          <button class="btn" id="weeklyBtn" autofocus>Weekly</button>
+          <button class="btn" id="monthlyBtn">Monthly</button>
         </div>
       </div>
 
@@ -40,8 +41,8 @@
             <button class="card-upper_ellipsis"><img src="./images/icon-ellipsis.svg" alt="ellipsis icon"></button>
           </div>
           <div class="card-upper_flex card-flex2">
-            <p class="card-upper_time">32hrs</p>
-            <p class="card-upper_previous">Last Week - 36hrs</p>
+            <p class="card-upper_time" id="work_time"></p>
+            <p class="card-upper_previous" id="work_time_previous"></p>
           </div>
         </div>
       </div>
@@ -54,8 +55,8 @@
             <button class="card-upper_ellipsis"><img src="./images/icon-ellipsis.svg" alt="ellipsis icon"></button>
           </div>
           <div class="card-upper_flex card-flex2">
-            <p class="card-upper_time">10hrs</p>
-            <p class="card-upper_previous">Last Week - 36hrs</p>
+            <p class="card-upper_time" id="play_time"></p>
+            <p class="card-upper_previous" id="play_time_previous"></p>
           </div>
         </div>
       </div>
@@ -68,8 +69,8 @@
             <button class="card-upper_ellipsis"><img src="./images/icon-ellipsis.svg" alt="ellipsis icon"></button>
           </div>
           <div class="card-upper_flex card-flex2">
-            <p class="card-upper_time">4hrs</p>
-            <p class="card-upper_previous">Last Week - 7hrs</p>
+            <p class="card-upper_time" id="study_time"></p>
+            <p class="card-upper_previous" id="study_time_previous"></p>
           </div>
         </div>
       </div>
@@ -82,8 +83,8 @@
             <button class="card-upper_ellipsis"><img src="./images/icon-ellipsis.svg" alt="ellipsis icon"></button>
           </div>
           <div class="card-upper_flex card-flex2">
-            <p class="card-upper_time">4hrs</p>
-            <p class="card-upper_previous">Last Week - 5hrs</p>
+            <p class="card-upper_time" id="exercise_time"></p>
+            <p class="card-upper_previous" id="exercise_time_previous"></p>
           </div>
         </div>
       </div>
@@ -96,8 +97,8 @@
             <button class="card-upper_ellipsis"><img src="./images/icon-ellipsis.svg" alt="ellipsis icon"></button>
           </div>
           <div class="card-upper_flex card-flex2">
-            <p class="card-upper_time">5hrs</p>
-            <p class="card-upper_previous">Last Week - 10hrs</p>
+            <p class="card-upper_time" id="social_time"></p>
+            <p class="card-upper_previous" id="social_time_previous"></p>
           </div>
         </div>
       </div>
@@ -110,8 +111,8 @@
             <button class="card-upper_ellipsis"><img src="./images/icon-ellipsis.svg" alt="ellipsis icon"></button>
           </div>
           <div class="card-upper_flex card-flex2">
-            <p class="card-upper_time">2hrs</p>
-            <p class="card-upper_previous">Last Week - 2hrs</p>
+            <p class="card-upper_time" id="self_time"></p>
+            <p class="card-upper_previous" id="self_time_previous"></p>
           </div>
         </div>
       </div>

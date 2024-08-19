@@ -147,6 +147,12 @@
     color: #FFF;
 }
 
+.btn:focus {
+    border: none;
+    outline: none;
+    color: #FFF;
+}
+
 .card-upper_ellipsis:hover {
     img {
         filter: brightness(0) invert(1);
@@ -155,12 +161,20 @@
 
 @media (min-width: 1260px){
 
+    body {
+        height: 100vh;
+        display: grid;
+        place-content: center;
+    }
+
     .grid-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         max-width: 1110px;
         width: 88%;
         gap: 2rem;
+
+        margin-top: 0;
     }
 
     .nav-lower {
