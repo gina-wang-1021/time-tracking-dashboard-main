@@ -7,18 +7,10 @@ const monthBtn = document.getElementById('monthlyBtn');
 let ourData = '';
 
 // set variables for each data
-let work = document.getElementById('work_time');
-let work_last = document.getElementById('work_time_previous');
-let play = document.getElementById('play_time');
-let play_last = document.getElementById('play_time_previous');
-let study = document.getElementById('study_time');
-let study_last = document.getElementById('study_time_previous');
-let exercise = document.getElementById('exercise_time');
-let exercise_last = document.getElementById('exercise_time_previous');
-let social = document.getElementById('social_time');
-let social_last = document.getElementById('social_time_previous');
-let selfCare = document.getElementById('self_time');
-let selfCare_last = document.getElementById('self_time_previous');
+const times = [document.getElementById('work_time'), document.getElementById('play_time'), document.getElementById('study_time'), document.getElementById('exercise_time'), document.getElementById('social_time'), document.getElementById('self_time')];
+console.log(times);
+const past_times = [document.getElementById('work_time_previous'), document.getElementById('play_time_previous'), document.getElementById('study_time_previous'), document.getElementById('exercise_time_previous'), document.getElementById('social_time_previous'), document.getElementById('self_time_previous')];
+console.log(past_times);
 
 let unit = '';
 let unit_UI = '';
@@ -58,18 +50,20 @@ async function main(){
 
     checkFocus();
 
-    work.innerHTML = ourData[0]["timeframes"][unit]["current"] + "hrs";
-    work_last.innerHTML = `Last ${unit_UI} - ` + ourData[0]["timeframes"][unit]["previous"] + "hrs";
-    play.innerHTML = ourData[1]["timeframes"][unit]["current"] + "hrs";
-    play_last.innerHTML = `Last ${unit_UI} - ` + ourData[1]["timeframes"][unit]["previous"] + "hrs";
-    study.innerHTML = ourData[2]["timeframes"][unit]["current"] + "hrs";
-    study_last.innerHTML = `Last ${unit_UI} - ` + ourData[2]["timeframes"][unit]["previous"] + "hrs";
-    exercise.innerHTML = ourData[3]["timeframes"][unit]["current"] + "hrs";
-    exercise_last.innerHTML = `Last ${unit_UI} - ` + ourData[3]["timeframes"][unit]["previous"] + "hrs";
-    social.innerHTML = ourData[4]["timeframes"][unit]["current"] + "hrs";
-    social_last.innerHTML = `Last ${unit_UI} - ` + ourData[4]["timeframes"][unit]["previous"] + "hrs";
-    selfCare.innerHTML = ourData[5]["timeframes"][unit]["current"] + "hrs";
-    selfCare_last.innerHTML = `Last ${unit_UI} - ` + ourData[5]["timeframes"][unit]["previous"] + "hrs";
+    let hours_unit = '';
+    let hours;
+
+    for (let i = 0; i < 6; i++){
+        hours = ourData[i]["timeframes"][unit]["current"];
+        if (Number(hours) > 1){ hours_unit = 'hrs'}
+        else{hours_unit = 'hr'};
+        times[i].innerHTML = hours + hours_unit;
+
+        hours = ourData[0]["timeframes"][unit]["previous"];
+        if (Number(hours) > 1){ hours_unit = 'hrs'}
+        else{hours_unit = 'hr'};
+        past_times[i].innerHTML = `Last ${unit_UI} - ` + ourData[0]["timeframes"][unit]["previous"] + hours_unit;
+    }
 }
 
 // execution & link buttons
